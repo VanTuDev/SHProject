@@ -26,7 +26,7 @@ public class LoginControl extends HttpServlet {
             request.getRequestDispatcher("login.jsp").forward(request, response);
     }else {
 //            request.getRequestDispatcher("home").forward(request, response);
-         response.sendRedirect("home.jsp");
+         response.sendRedirect("google_login_result.jsp");
         }
     }
 
