@@ -1,8 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : Jul 1, 2021, 1:12:31 PM
-    Author     : heaty566
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -38,12 +33,7 @@
             <a href="https://www.facebook.com/login.php" class="btn btn-primary">Đăng nhập bằng Facebook</a>
         </div>
 
-        
-        
-        
-        
-        
-        
+    
         <!-- Thêm Bootstrap JavaScript và jQuery vào trang (đặt ở cuối trang trước </body>) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
