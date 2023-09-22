@@ -15,44 +15,46 @@
 <body>
 
     <!-- Header -->
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-            <a class="navbar-brand" href="#">Your Logo</a>
-            <button class="navbar-toggler" type="button"
-                    data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul id="myNavbar" class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Trang chủ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Căn hộ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Liên hệ</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="login.jsp">Đăng nhập</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="register.jsp">Đăng kí</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="favorites.jsp">Yêu thích</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="account.jsp">Tài khoản của bạn</a>
-                    </li>
-                </ul>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Your Logo</a>
+                <button class="navbar-toggler" type="button"
+                        data-toggle="collapse" data-target="#navbarNav"
+                        aria-controls="navbarNav" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul id="myNavbar" class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Trang chủ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Căn hộ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="favorites.jsp">Yêu thích</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="account.jsp">Tài khoản của bạn</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.jsp">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="register.jsp">Đăng kí</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
-</header>
+        </nav>
+
+    </header>
 
 
     <!-- Main Content -->
@@ -60,34 +62,37 @@
         <div class="row">
             <div class="col-md-3">
                 <!-- Sidebar -->
-                <h2>Danh Muc</h2>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <a class="scroll-link" href="#" onclick="submitForm('nhanguyencan')">Nhà Nguyên Can</a>
-                        <form id="nhanguyencanForm" action="process.php" method="post">
-                            <input type="hidden" name="category" value="Nhà Nguyên Can">
-                        </form>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="scroll-link" href="#" onclick="submitForm('villa')">Villa</a>
-                        <form id="villaForm" action="process.php" method="post">
-                            <input type="hidden" name="category" value="Villa">
-                        </form>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="scroll-link" href="#" onclick="submitForm('bietthu')">Biet Thu</a>
-                        <form id="bietthuForm" action="process.php" method="post">
-                            <input type="hidden" name="category" value="Biet Thu">
-                        </form>
-                    </li>
-                    <li class="list-group-item">
-                        <a class="scroll-link" href="#" onclick="submitForm('nhatrochothue')">Nha tro cho thue</a>
-                        <form id="nhatrochothueForm" action="process.php" method="post">
-                            <input type="hidden" name="category" value="Nha tro cho thue">
-                        </form>
-                    </li>
-                </ul>
+                <div id="sidebar" class="position-fixed">
+                    <h2 class="text-center mb-4">Danh Mục</h2>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <a class="scroll-link" href="#" onclick="submitForm('nhanguyencan')">Nhà Nguyên Căn</a>
+                            <form id="nhanguyencanForm" action="process.php" method="post">
+                                <input type="hidden" name="category" value="Nhà Nguyên Căn">
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="scroll-link" href="#" onclick="submitForm('villa')">Villa</a>
+                            <form id="villaForm" action="process.php" method="post">
+                                <input type="hidden" name="category" value="Villa">
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="scroll-link" href="#" onclick="submitForm('bietthu')">Biệt Thự</a>
+                            <form id="bietthuForm" action="process.php" method="post">
+                                <input type="hidden" name="category" value="Biệt Thự">
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <a class="scroll-link" href="#" onclick="submitForm('nhatrochothue')">Nhà Trọ Cho Thuê</a>
+                            <form id="nhatrochothueForm" action="process.php" method="post">
+                                <input type="hidden" name="category" value="Nhà Trọ Cho Thuê">
+                            </form>
+                        </li>
+                    </ul>
+                </div>
             </div>
+
 
             <script>
                 function submitForm(formId) {
@@ -97,6 +102,8 @@
                     }
                 }
             </script>
+
+
 
             <div class="col-md-9">
                 <!-- Danh sách sản phẩm -->
@@ -297,13 +304,45 @@
     </div>
 </div>
 
-<!-- Footer -->
-<footer class="mt-5 p-3 bg-light text-center">
-    © 2023 HRH
+<footer class="footer">
+    <div class="container">
+        <div class="social-icons">
+            <!-- Add your social media icons here -->
+        </div>
+        <div class="copyright">
+            © 2023 Copyright: <a href="https://example.com/">YourWebsite.com</a>
+        </div>
+    </div>
 </footer>
 
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
 
+    /* Style the footer */
+    .footer {
+        background-color: #333; /* Change the background color to your preference */
+        color: white; /* Change text color to your preference */
+        padding: 20px 0; /* Add padding for spacing */
+        position: fixed; /* Fix the footer to the bottom of the viewport */
+        width: 100%; /* Make the footer full-width */
+        bottom: 0; /* Position at the bottom */
+        text-align: center; /* Center-align the content */
+    }
 
+    /* Style social icons or other elements within the footer */
+    .social-icons {
+        /* Add your styles for social icons */
+    }
+
+    /* Style the copyright text */
+    .copyright {
+        font-size: 14px; /* Adjust font size as needed */
+        margin-top: 10px; /* Add margin from social icons */
+    }
+</style>
 
 <!-- Link đến Bootstrap JavaScript và jQuery -->
 <script

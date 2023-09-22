@@ -1,0 +1,45 @@
+/* Định dạng chung cho navbar */
+#myNavbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: #ffffff; /* Màu nền */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng đổ */
+    z-index: 1000;
+}
+
+/* Định dạng các mục trong navbar */
+#myNavbar li.nav-item {
+    margin: 0 15px; /* Khoảng cách giữa các mục */
+    font-weight: 500; /* Độ đậm cho văn bản */
+}
+
+#myNavbar li.nav-item a.nav-link {
+    color: #333; /* Màu chữ */
+    transition: color 0.3s; /* Hiệu ứng màu chữ khi hover */
+}
+
+#myNavbar li.nav-item a.nav-link:hover {
+    color: #007bff; /* Màu chữ khi hover */
+}
+
+/* Định dạng logo hoặc tên trang */
+#myNavbar .navbar-brand {
+    font-size: 24px;
+    font-weight: 700;
+    color: #007bff; /* Màu chữ cho logo hoặc tên trang */
+}
+
+/* Định dạng nút toggle khi trình duyệt có kích thước nhỏ (mobile) */
+#myNavbar button.navbar-toggler {
+    background-color: #007bff; /* Màu nút toggle */
+}
+
+#myNavbar button.navbar-toggler:focus {
+    outline: none; /* Loại bỏ đường viền khi tương tác */
+}
+.scroll-link:hover {
+    color: #007bff; /* Change color when hovered */
+    text-decoration: none; /* Remove default underline */
+}

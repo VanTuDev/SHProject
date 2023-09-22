@@ -11,7 +11,7 @@
     <body>
         <div class="container">
             <h2>Login</h2>
-            <form action="home.jsp" method="post">
+            <form action="" method="post">
                 <div class="form-group">
                     <label for="username">Tài khoản:</label>
                     <input type="text" class="form-control" id="username" name="username">
@@ -42,7 +42,7 @@
             </form>
             <hr>
             <!-- Liên kết đăng nhập bằng Google -->
-            <form action="home.jsp" method="post"> 
+            <form> 
                 <a href="https://accounts.google.com/o/oauth2/auth?scope=profile&redirect_uri=http://localhost:8080/SHProject/loginGoogleHandler&response_type=code
                    &client_id=167211563617-5l2o9fo4r4lli3ui8nnfsb1c8i1ufniu.apps.googleusercontent.com&approval_prompt=force" class="btn btn-danger">Đăng nhập bằng Google</a>
 
