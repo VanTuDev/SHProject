@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
@@ -25,8 +20,15 @@ public class LoginGoogleHandler extends HttpServlet {
         String code = request.getParameter("code");
         String accessToken = getToken(code);
         UserGoogleDto user = getUserInfo(accessToken);
-        System.out.println(user);
-        
+        if (user != null) {
+            // Nếu thành công, chuyển hướng đến trang home.jsp
+            response.sendRedirect("home.jsp");
+        } else {
+            // Xử lý lỗi hoặc trường hợp không thành công khác ở đây
+            // Ví dụ: Hiển thị thông báo lỗi hoặc chuyển hướng đến trang lỗi
+            response.sendRedirect("register.jsp");
+        }
+
     }
 
     public static String getToken(String code) throws ClientProtocolException, IOException {
@@ -61,7 +63,7 @@ public class LoginGoogleHandler extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-       request.getRequestDispatcher("home.jsp").forward(request, response);
+
     }
 
     @Override

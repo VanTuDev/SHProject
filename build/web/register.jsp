@@ -16,25 +16,25 @@
                         <h2 class="text-center">Registration</h2>
                     </div>
                     <div class="card-body">
-                        <form action="google_login_result.jsp" method="POST" onsubmit="return validateForm()">
+                        <form action="signup" method="POST" onsubmit="return validateForm()">
                             <div class="form-group">
                                 <label for="username">Username:</label>
-                                <input type="text" class="form-control" id="username" name="username" required>
+                                <input type="text" class="form-control" id="username" name="user" required>
                             </div>
 
-                            <div class="form-group">
+<!--                            <div class="form-group">
                                 <label for="email">Email:</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
-                            </div>
+                            </div>-->
 
                             <div class="form-group">
                                 <label for="password">Password:</label>
-                                <input type="password" class="form-control" id="password" name="password" required>
+                                <input type="password" class="form-control" id="password" name="pass" required>
                             </div>
 
                             <div class="form-group">
                                 <label for="confirm_password">Confirm Password:</label>
-                                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+                                <input type="password" class="form-control" id="confirm_password" name="re_pass" required>
                                 <small id="passwordMatchError" class="text-danger d-none">Passwords do not match.</small>
                             </div>
 

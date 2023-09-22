@@ -4,11 +4,13 @@
  */
 package DAO;
 
+import DataBase.AccountsDAO;
 import DataBase.JDBCUtil;
 import static DataBase.JDBCUtil.closeConnection;
 import static DataBase.JDBCUtil.setConnection;
 import DataBase.UserDAO;
 import entity.Account;
+import entity.Accounts;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,28 +21,28 @@ public class DAO {
     PreparedStatement ps = null;
     ResultSet rs = null;
 
-    public Account login(String userc_Username, String userc_Password) {
-        String query = "select *from account\n"
-                + "where userc_Username =?\n "
-                + " and userc_Password = ?";
+    public Accounts login(String user, String pass) {
+        String query = "SELECT * FROM accounts\n"
+                + "WHERE [user] = ?\n"
+                + "AND pass = ?";
         try {
             conn = new JDBCUtil().getConnection();
             ps = conn.prepareStatement(query);
-            ps.setString(1, userc_Username);
-            ps.setString(1, userc_Password);
+            ps.setString(1, user);
+            ps.setString(2, pass);
             rs = ps.executeQuery();
             while (rs.next()) {
-                return new Account(rs.getString(1),
+                return new Accounts(rs.getString(1),
                         rs.getString(2),
-                        rs.getString(3),
-                        rs.getString(4),
-                        rs.getString(5),
-                        rs.getInt(6),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getInt(5),
+                        rs.getString(6),
                         rs.getString(7),
                         rs.getString(8),
                         rs.getInt(9),
-                        rs.getInt(10),
-                        rs.getInt(11));
+                        rs.getString(10),
+                        rs.getString(11));
             }
         } catch (Exception e) {
         }
@@ -48,16 +50,58 @@ public class DAO {
 
     }
 
-     public static void main(String[] args) {
-        setConnection();
-        
-        UserDAO userDB = new UserDAO();
-        String username = "lehieu";
-        String password = "1234";
-        
-        System.out.println(userDB.doLogin(username, password));
-        
-        closeConnection();
-    }
+    public Accounts checkAccountExist(String user) {
+        String query = "SELECT * FROM accounts\n"
+                + "WHERE [user] = ?\n";
+
+        try {
+            conn = new JDBCUtil().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+
+            rs = ps.executeQuery();
+            while (rs.next()) {
+               return new Accounts(rs.getString(1),
+                        rs.getString(2),
+                        rs.getInt(3),
+                        rs.getInt(4),
+                        rs.getInt(5),
+                        rs.getString(6),
+                        rs.getString(7),
+                        rs.getString(8),
+                        rs.getInt(9),
+                        rs.getString(10),
+                        rs.getString(11));
+            }
+        } catch (Exception e) {
+        }
+        return null;
+
     }
 
+    public void singup(String user, String pass) {
+        String query = "  insert into accounts \n"
+                + "  values ('?','?',null, null,null,null,null,null,null,null,null)";
+        try {
+            conn = new JDBCUtil().getConnection();
+            ps = conn.prepareStatement(query);
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            ps.executeUpdate();
+
+        } catch (Exception e) {
+        }
+    }
+
+    public static void main(String[] args) {
+        setConnection();
+
+        AccountsDAO AccountsDAO = new AccountsDAO();
+        String user = "vantu";
+        String pass = "123";
+
+        System.out.println(AccountsDAO.dLogin(user, pass));
+
+        closeConnection();
+    }
+}

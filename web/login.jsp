@@ -15,22 +15,22 @@
                 <p class="text-danger"> ${mess} </p>
                 <div class="form-group">
                     <label for="username">Tài khoản:</label>
-                    <input type="text" class="form-control" id="username" name="username">
+                    <input type="text" class="form-control" id="username" name="user">
                 </div>
                 <div class="form-group">
                     <label for="password">Mật khẩu:</label>
-                    <input type="password" class="form-control" id="password" name="password">
+                    <input type="password" class="form-control" id="password" name="pass">
                     <button type="button" id="showPassword">Hiển thị Mật khẩu</button>
                 </div>
 
                 <script>
-                    var passwordField = document.getElementById("password");
+                    var passwordField = document.getElementById("pass");
                     var showPasswordButton = document.getElementById("showPassword");
                     var isPasswordVisible = false;
 
                     showPasswordButton.addEventListener("click", function () {
                         if (isPasswordVisible) {
-                            passwordField.type = "password";
+                            passwordField.type = "pass";
                             showPasswordButton.textContent = "Hiển thị Mật khẩu";
                         } else {
                             passwordField.type = "text";

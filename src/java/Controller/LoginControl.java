@@ -2,6 +2,7 @@ package Controller;
 
 import DAO.DAO;
 import entity.Account;
+import entity.Accounts;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -16,16 +17,16 @@ public class LoginControl extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        String userc_Username = request.getParameter("userc_Username");
-        String userc_Password = request.getParameter("userc_Password");
+        String user = request.getParameter("user");
+        String pass = request.getParameter("pass");
         DAO dao = new DAO();
-        Account a = dao.login(userc_Username, userc_Password);
+        Accounts a = dao.login(user, pass);
         if(a==null){
             request.setAttribute("mess", "Wrong user or password");
             request.getRequestDispatcher("login.jsp").forward(request, response);
     }else {
-            request.getRequestDispatcher("home").forward(request, response);
-            
+//            request.getRequestDispatcher("home").forward(request, response);
+         response.sendRedirect("home.jsp");
         }
     }
 
