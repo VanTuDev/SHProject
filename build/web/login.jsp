@@ -12,9 +12,7 @@
         <div class="container">
             <h2>Login</h2>
             <form action="login" method="post">
-                <div class="alert alert-danger" role="alert">
-                    This is a danger alert—check it out!
-                </div
+                <p class="text-danger"> ${mess} </p>
                 <div class="form-group">
                     <label for="username">Tài khoản:</label>
                     <input type="text" class="form-control" id="username" name="username">
