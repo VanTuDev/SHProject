@@ -24,7 +24,8 @@ public class UserDAO {
     
     public boolean doLogin(String username, String password) {
         try {
-            String sql = "SELECT UserC_Password FROM UserC WHERE userc_Username=?";
+            // String sql = "SELECT UserC_Password FROM UserC WHERE userc_Username=?"; 
+            String sql = "SELECT UserC_Password FROM account WHERE userc_Username=?";
             PreparedStatement stm = conn.prepareStatement(sql);
             stm.setString(1, username);
             ResultSet rs = stm.executeQuery();
