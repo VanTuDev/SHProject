@@ -19,7 +19,25 @@
                 <div class="form-group">
                     <label for="password">Mật khẩu:</label>
                     <input type="password" class="form-control" id="password" name="password">
+                    <button type="button" id="showPassword">Hiển thị Mật khẩu</button>
                 </div>
+
+                <script>
+                    var passwordField = document.getElementById("password");
+                    var showPasswordButton = document.getElementById("showPassword");
+                    var isPasswordVisible = false;
+
+                    showPasswordButton.addEventListener("click", function () {
+                        if (isPasswordVisible) {
+                            passwordField.type = "password";
+                            showPasswordButton.textContent = "Hiển thị Mật khẩu";
+                        } else {
+                            passwordField.type = "text";
+                            showPasswordButton.textContent = "Ẩn Mật khẩu";
+                        }
+                        isPasswordVisible = !isPasswordVisible;
+                    });
+                </script>
                 <button type="submit" class="btn btn-primary">Đăng nhập</button>
             </form>
             <hr>
@@ -33,7 +51,7 @@
             <a href="https://www.facebook.com/login.php" class="btn btn-primary">Đăng nhập bằng Facebook</a>
         </div>
 
-    
+
         <!-- Thêm Bootstrap JavaScript và jQuery vào trang (đặt ở cuối trang trước </body>) -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
